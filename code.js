@@ -22,23 +22,11 @@ function getContent(url, parent) {
     results.textContent = '';
     focus.textContent = '';
 
-    // results.childNodes.forEach(element => {
-    //     results.removeChild(element);
-    // })
-
-    //console.log('now: ',url);
-
     fetch(url).
         then(response => response.json()).
         then(data => {
             totalItems = data.info.totalrecords;
             numberDisplay.textContent = currentPage;
-
-            // prevUrl = data.info.prev;
-            // nextUrl = data.info.next;
-
-            // console.log('prev: ',prevUrl);
-            // console.log('next: ', nextUrl);
 
             console.log(currentPage, url);
 
@@ -59,8 +47,6 @@ function getContent(url, parent) {
                 div.appendChild(h);
 
                 parent.appendChild(div);
-                
-                //console.log(record);
             });
         });
 }
@@ -104,25 +90,6 @@ results.addEventListener('click',(evt)=> {
     if (evt.target !== evt.currentTarget) {
         numberDisplay.textContent = '';
 
-        // let img;
-
-        // switch (evt.target.nodeName) {
-        //     case 'IMG':
-        //         img = evt.target;
-        //         break;
-        //     case 'P':
-        //         img = evt.currentTarget.querySelector('img');
-        //         break;
-        //     case 'DIV':
-        //         img = evt.target.querySelector('img');
-        //         break;
-        // }
-
-        // const htmlPieces = img.src.split(':');
-        // const id = htmlPieces[htmlPieces.length-1].split('_')[0];
-        // const search = `q=${id}&size=${itemsPerPage}`;
-        // const url = `${apiBaseURL}image?apikey=${key}&${search}`;
-
         let div;
 
         switch (evt.target.nodeName) {
@@ -148,6 +115,3 @@ results.addEventListener('click',(evt)=> {
 
 
 getContent(starterUrl, results);
-
-
-
