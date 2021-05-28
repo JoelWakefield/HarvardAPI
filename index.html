@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="style.css">
+
+    <title>HARVARD</title>
+</head>
+<body>
+    <div id="header">
+        <div>
+            <h1>Harvard Art Museum Image Search</h1>
+    
+            <span>
+                <input id="search-input" type="text">
+                <button id="search-button">SEARCH</button>
+            </span>
+        </div>
+    
+        <div style="padding-top: 1em;">
+            <span>
+                <button id="previous">PREV</button>
+                <button id="next">NEXT</button>
+                <h3>Page:</h3>
+                <h3 id="page-number"></h3>
+            </span>
+        </div>
+    </div>
+
+    <div id="results" class="flex-parent"></div>
+
+    <div id="focus-result"></div>
+
+    <script src="code.js"></script>
+</body>
+</html>
